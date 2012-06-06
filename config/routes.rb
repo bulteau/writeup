@@ -1,9 +1,15 @@
 WriteUp::Application.routes.draw do
-  resources :meetings
+  
+
+  resources :meetings do
+    resources :tasks
+  end
 
   get "home/index"
   
   root :to => "home#index"
+  
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

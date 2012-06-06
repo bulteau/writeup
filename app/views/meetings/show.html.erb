@@ -15,6 +15,48 @@
   <%= @meeting.date %>
 </p>
 
+<h2>Tasks</h2>
+<table>
+  <tr>
+    <td>Owner</td>
+    <td>Date</td>
+    <td>Title</td>
+  </tr>
+<% @meeting.tasks.each do |task| %>
+  <tr>
+    <td>    
+      <%= task.owner %>
+    </td>
+    <td>    
+      <%= task.date %>
+    </td>
+    <td>    
+      <%= task.title %>
+    </td>
+  </tr>
+<% end %>  
+</table>
+
+
+<h2>Add a task:</h2>
+<%= form_for([@meeting, @meeting.tasks.build]) do |f| %>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :owner %><br />
+    <%= f.text_field :owner %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
 
 <%= link_to 'Edit', edit_meeting_path(@meeting) %> |
 <%= link_to 'Back', meetings_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  date: 2012-06-06
+  owner: MyString
+  meeting: 
+
+two:
+  title: MyString
+  date: 2012-06-06
+  owner: MyString
+  meeting: 
